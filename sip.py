@@ -9,6 +9,8 @@ import time
 import thread
 from calendar import timegm
 import sys
+import os
+import os.path
 sys.path.append('./plugins')
 
 import web  # the Web.py module. See webpy.org (Enables the Python SIP web interface)
