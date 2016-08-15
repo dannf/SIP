@@ -174,7 +174,8 @@ app = SIPApp(urls, globals())
 #  disableShiftRegisterOutput()
 web.config.debug = False  # Improves page load speed
 if web.config.get('_session') is None:
-    web.config._session = web.session.Session(app, web.session.DiskStore('sessions'),
+    web.config._session = web.session.Session(app,
+                                              web.session.DiskStore(os.path.join(os.getenv('SIP_DATA_DIR', ''), 'sessions')),
                                               initializer={'user': 'anonymous'})
 template_globals = {
     'gv': gv,
