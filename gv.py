@@ -101,7 +101,7 @@ try:
             sd[key] = sd_temp[key]
 except IOError:  # If file does not exist, it will be created using defaults.
     with open(os.path.join(os.getenv('SIP_DATA_DIR', './data'), 'sd.json'), 'w') as sdf:  # save file
-        json.dump(sd, indent=4, sort_keys=True)
+        json.dump(sd, sdf, indent=4, sort_keys=True)
 
 
 nowt = time.localtime()
