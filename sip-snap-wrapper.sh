@@ -1,5 +1,9 @@
 #!/bin/sh
 
+set -e
+
 export SIP_DATA_DIR="$SNAP_DATA"
 
-python $SNAP/bin/sip.py
+cd $SNAP/bin
+
+python sip.py
