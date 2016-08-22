@@ -1,0 +1,25 @@
+name: opensprinkler-sip-dannf
+version: 7.7.5
+summary: Free open source Sprinkler / Irrigation control software
+description:
+  Web interface for OpenSprinkler controllers built on top of Raspberry Pi or
+  Beaglebone Black.
+confinement: devmode
+
+apps:
+  sip:
+    command: bin/sip-snap-wrapper.sh
+    daemon: simple
+
+parts:
+  sip:
+    plugin: copy
+    source: https://github.com/dannf/SIP.git
+    source-branch: snapcraft
+    files:
+      "*": bin/
+  adafruit:
+    plugin: python2
+    python-packages:
+      - Adafruit_BBIO
+
